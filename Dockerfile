@@ -12,10 +12,16 @@
 
 FROM node:alpine AS my-app-build
 WORKDIR /app
-COPY . .
-# RUN npm install && npm run build
-RUN npm i
-RUN $(npm bin)/ng build --prod
+ENV PATH=${PATH}:./node_modules/.bin
+ENV NODE_PATH=./node_modules
+ADD package.json /app/
+ADD package-lock.json /app/
+RUN npm ci
+RUN ngcc
+ADD . .
+# RUN ng build --prod
+RUN ng build --source-map=false
+#RUN ng serve
 
 # stage 2
 
