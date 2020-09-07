@@ -1,0 +1,34 @@
+<div class="container">
+    <h3>Realizacja zamówienia</h3>
+
+      <table class="striped">
+        <thead>
+          <tr>
+              <th>Tytuł produktu</th>
+              <th>Opis produktu</th>
+              <th>Ilość</th>
+              <th>Cena (szt.)</th>
+              <th>Cena</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.counter}}</td>
+            <td>{{product.price / 100.0}} zł</td>
+            <td>{{(product.price * product.counter) / 100.0}} zł</td>
+          </tr>
+          <tr style="border-top: 2px solid #ee6e73;">
+              <td><strong>Podsumowanie</strong></td>
+              <td></td>
+              <td><strong>{{getItemCounter()}}</strong></td>
+              <td></td>
+              <td><strong>{{getItemPrices() / 100.0}} zł</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a (click)="createOrder()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">send</i>Zamów</a>
+</div>

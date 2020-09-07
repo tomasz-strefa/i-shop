@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>Koszyk</h3>
+
+    <ul class="collection" *ngIf="products.length > 0">
+        <li class="collection-item avatar" *ngFor="let product of products">
+          <img src="{{product.image}}" alt="" class="circle">
+          <span class="title">{{product.title}}</span>
+          <p>
+              {{product.description}} <br> 
+              {{product.price / 100.0}} zł (szt.) / Ilość: {{product.counter}}
+              (<b>{{(product.price * product.counter) / 100.0}} zł</b>)
+          </p>
+          <a (click)="deleteItem(product.productId)" style="cursor: pointer;" class="secondary-content"><i style="color: #ee6e73;" class="material-icons">delete</i></a>
+        </li>
+      </ul>
+
+      <h3 *ngIf="products.length > 0">Podsumowanie</h3>
+
+      <ul class="collapsible" *ngIf="products.length > 0">
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">folder_open</i>
+            Ilość produktów
+            <span class="badge">{{getItemCounter()}}</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header">
+            <i class="material-icons">payment</i>
+            Cena całkowita
+            <span class="badge">{{getItemPrices() / 100.0}} zł</span></div>
+        </li>
+      </ul>
+
+      <a (click)="clearCart()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">delete</i>Wyczyść koszyk</a>
+</div>

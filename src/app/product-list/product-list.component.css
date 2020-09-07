@@ -1,0 +1,13 @@
+.card-title {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.cart-button {
+    position: fixed;
+    right: 7px;
+    top: 72px;
+}
+
+.price {
+    color: #ffff00;
+}

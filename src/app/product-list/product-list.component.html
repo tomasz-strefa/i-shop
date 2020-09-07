@@ -1,0 +1,23 @@
+<div class="container">
+    <h3>Lista produktów</h3>
+    
+    <a class="waves-effect waves-light btn red lighten-2 cart-button"><i class="material-icons left">add_shopping_cart</i>{{getItemsCounter()}} ({{getItemsPrice() / 100}} zł)</a>
+    
+    <div class="row">
+      
+        <div class="col s6 m4" *ngFor="let product of products">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{product.image}}">
+                    <span class="card-title">{{product.title}} <span class="price">({{product.price / 100.0}} zł)</span></span>
+                    <a id="product_{{product.productId}}" (click) = "addToCart(product)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <p>{{product.description}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  
