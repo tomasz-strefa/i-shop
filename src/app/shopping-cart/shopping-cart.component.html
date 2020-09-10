@@ -10,7 +10,7 @@
               {{product.price / 100.0}} zł (szt.) / Ilość: {{product.counter}}
               (<b>{{(product.price * product.counter) / 100.0}} zł</b>)
           </p>
-          <a (click)="deleteItem(product.productId)" style="cursor: pointer;" class="secondary-content"><i style="color: #ee6e73;" class="material-icons">delete</i></a>
+          <a id="product_{{product.productId}}" (click)="deleteItem(product.productId)" style="cursor: pointer;" class="secondary-content"><i style="color: #ee6e73;" class="material-icons">delete</i></a>
         </li>
       </ul>
 

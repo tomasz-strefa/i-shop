@@ -1,6 +1,8 @@
 <div class="container">
     <h3>Realizacja zamówienia</h3>
 
+      <div id="alert" *ngIf="showAlert" [ngClass]="{'teal': isGreenAlertShow(), 'red': isRedAlertShow()}" class="card-panel lighten-2">{{alert}}</div>
+
       <table class="striped">
         <thead>
           <tr>
@@ -30,5 +32,5 @@
         </tbody>
       </table>
 
-      <a (click)="createOrder()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">send</i>Zamów</a>
+      <a id="submit_form" (click)="createOrder()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">send</i>Zamów</a>
 </div>

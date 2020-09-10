@@ -12,6 +12,10 @@ import { OrderService } from '../services/order.service';
 export class OrderComponent implements OnInit {
 
   products: Array<Product> = [];
+  alert: String;
+  showGreenAlert: Boolean = false;
+  showRedAlert: Boolean = false;
+  showAlert: boolean = false;
 
   constructor(private shoopingCartService: ShoopingCartService, private orderService: OrderService) { }
 
@@ -31,9 +35,15 @@ export class OrderComponent implements OnInit {
     return this.shoopingCartService.getItemPrices();
   }
 
-  createOrder() {
-    console.log('send request');
+  isGreenAlertShow() {
+    return this.showGreenAlert;
+  }
 
+  isRedAlertShow() {
+    return this.showRedAlert;
+  }
+
+  createOrder() {
     const order = new Order();
     order.products = this.products;
     order.productsCounter = this.getItemCounter();
@@ -42,9 +52,13 @@ export class OrderComponent implements OnInit {
     this.orderService.order(order).subscribe(data => {
       this.shoopingCartService.clearCart();
       this.ngOnInit();
-      alert('Zamówienie zostało zrealizowane!');
+      this.alert = 'Zamówienie zostało zrealizowane!'
+      this.showAlert = true;
+      this.showGreenAlert = true;
     }, err => {
-      alert('Wystąpił problem podczas realizacji zamówienia!');
+      this.alert = 'Wystąpił problem podczas realizacji zamówienia!';
+      this.showAlert = true;
+      this.showRedAlert = true;
     });
   }
 
