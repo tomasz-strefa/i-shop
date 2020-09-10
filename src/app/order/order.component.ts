@@ -52,11 +52,11 @@ export class OrderComponent implements OnInit {
     this.orderService.order(order).subscribe(data => {
       this.shoopingCartService.clearCart();
       this.ngOnInit();
-      this.alert = 'Zamówienie zostało zrealizowane'
+      this.alert = 'Zamówienie zostało zrealizowane!'
       this.showAlert = true;
       this.showGreenAlert = true;
     }, err => {
-      this.alert = 'Wystąpił problem podczas realizacji zamówienia';
+      this.alert = 'Wystąpił problem podczas realizacji zamówienia!';
       this.showAlert = true;
       this.showRedAlert = true;
     });
