@@ -1,3 +1,9 @@
+<header>
+  <h1>Realizacja zamówienia</h1>
+
+  <p>Już tylko jeden krok dzieli Cię od podarowania prezentu</p>
+</header>
+
 <div class="container">
     <h3>Realizacja zamówienia</h3>
 
@@ -17,12 +23,12 @@
         <tbody>
           <tr *ngFor="let product of products">
             <td>{{product.title}}</td>
-            <td>{{product.description}}</td>
+            <td class="product-description">{{product.description}}</td>
             <td>{{product.counter}}</td>
             <td>{{product.price / 100.0}} zł</td>
             <td>{{(product.price * product.counter) / 100.0}} zł</td>
           </tr>
-          <tr style="border-top: 2px solid #ee6e73;">
+          <tr style="border-top: 1px solid #3D5AFE;">
               <td><strong>Podsumowanie</strong></td>
               <td></td>
               <td><strong>{{getItemCounter()}}</strong></td>
@@ -32,5 +38,7 @@
         </tbody>
       </table>
 
-      <a id="submit_form" (click)="createOrder()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">send</i>Zamów</a>
+      <div class="actions">
+        <a id="submit_form" (click)="createOrder()" *ngIf="products.length > 0" class="waves-effect waves-light btn-large red lighten-2"><i class="material-icons left">send</i>Zamów</a>
+      </div>
 </div>

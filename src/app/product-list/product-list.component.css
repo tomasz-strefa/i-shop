@@ -4,10 +4,26 @@
 
 .cart-button {
     position: fixed;
-    right: 7px;
-    top: 72px;
+    right: 14px;
+    top: 79px;
+    background-color: black;
+    box-shadow: none;
 }
 
 .price {
-    color: #ffff00;
+    color: #fff;
+    font-weight: 600;
+}
+
+.card a {
+    background-color: #3D5AFE;
+}
+
+.card-content {
+    min-height: 92px;
+    font-size: 11px;
+}
+
+header {
+    background-image: url('../../assets/picture_1.png');
 }

@@ -10,6 +10,7 @@ export class OrderService {
 
   // Base url
   baseurl = 'http://dev-livecode.codenga.pl/api/i-shop';
+  //baseUrl = 'http://localhost:8080/api/i-shop';
 
   constructor(private http: HttpClient) { }
 
@@ -24,5 +25,5 @@ export class OrderService {
   order(order: Order): Observable<any> {
     return this.http.post<Order>(this.baseurl + '/order', order, this.httpOptions);
   }
-  
+
 }

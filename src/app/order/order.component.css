@@ -1,0 +1,23 @@
+header {
+    background-image: url('../../assets/picture_2.png');
+}
+
+table th, table td {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #757575;
+}
+
+table td {
+    color: #000;
+}
+
+table .product-description {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9E9E9E;
+}

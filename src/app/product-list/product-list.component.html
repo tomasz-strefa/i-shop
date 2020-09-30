@@ -1,7 +1,17 @@
+<header>
+    <h1>Stwórz prezent marzeń dla siebie lub bliskiej osoby!</h1>
+
+    <p>
+        Prezenty towarzyszą nam przez całe życie, wręczamy i 
+        otrzymujemy je na różne okazje. Dzięki nam możesz podarować prezent w formie przeżyć – 
+        podaruj komuś emocje i doświadczenia!
+    </p>
+</header>
+
 <div class="container">
     <h3>Lista produktów</h3>
     
-    <a class="waves-effect waves-light btn red lighten-2 cart-button"><i class="material-icons left">add_shopping_cart</i>{{getItemsCounter()}} ({{getItemsPrice() / 100}} zł)</a>
+    <a class="btn cart-button"><i class="material-icons left">shopping_basket</i>{{getItemsCounter()}} ({{getItemsPrice() / 100}} zł)</a>
     
     <div class="row">
       
@@ -10,7 +20,7 @@
                 <div class="card-image">
                     <img src="{{product.image}}">
                     <span class="card-title">{{product.title}} <span class="price">({{product.price / 100.0}} zł)</span></span>
-                    <a id="product_{{product.productId}}" (click) = "addToCart(product)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <a id="product_{{product.productId}}" (click) = "addToCart(product)" class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
                     <p>{{product.description}}</p>

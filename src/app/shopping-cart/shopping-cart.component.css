@@ -2,3 +2,30 @@
     box-shadow: none;
     -webkit-box-shadow: none;
 }
+
+header {
+    background-image: url('../../assets/picture_3.png');
+}
+
+.collection, .collection-item {
+    border: none;
+}
+
+.trash-icon {
+    top: 15px;
+    position: relative;
+}
+
+.product-description, .product-price {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9E9E9E;
+}
+
+.product-description {
+    font-style: italic;
+}
+
+.badge {
+    color: #000;
+}

@@ -10,6 +10,7 @@ export class ProductService {
 
   // Base url
   baseurl = 'http://dev-livecode.codenga.pl/api/i-shop';
+  //baseUrl = 'http://localhost:8080/api/i-shop';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,5 @@ export class ProductService {
   getProducts(): Observable<Product> {
     return this.http.get<Product>(this.baseurl + '/products');
   }
-  
+
 }
