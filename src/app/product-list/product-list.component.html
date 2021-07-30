@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-image">
                     <img src="{{product.image}}">
-                    <span class="card-title">{{product.title}} <span class="price">({{product.price / 100.0}} zł)</span></span>
+                    <span class="card-title">{{product.price}} <span class="price">({{product.price / 100.0}} zł)</span></span>
                     <a id="product_{{product.productId}}" (click) = "addToCart(product)" class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
